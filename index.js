@@ -3,7 +3,7 @@
 require('dotenv').config()
 const APPLICATION_ID = process.env.APPLICATION_ID 
 const TOKEN = process.env.TOKEN 
-const PUBLIC_KEY = process.env.PUBLIC_KEY || 'not set'
+const PUBLIC_KEY = process.env.PUBLIC_KEY || 'f93392fddd0cdbd36395b6792748464f9d6def0895e7c3619e4bcf100df76f70'
 const GUILD_ID = process.env.GUILD_ID 
 
 
