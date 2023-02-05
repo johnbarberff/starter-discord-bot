@@ -34,16 +34,16 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
 
   if (interaction.type === InteractionType.APPLICATION_COMMAND) {
     console.log(interaction.data.name)
-    if(interaction.data.name == 'yo'){
+    if(interaction.data.name == 'nigger'){
       return res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `Yo ${interaction.member.user.username}!`,
+          content: `You are a fucking nigger, ${interaction.member.user.username}!`,
         },
       });
     }
 
-    if(interaction.data.name == 'dm'){
+    if(interaction.data.name == 'msgme'){
       // https://discord.com/developers/docs/resources/user#create-dm
       let c = (await discord_api.post(`/users/@me/channels`,{
         recipient_id: interaction.member.user.id
@@ -51,7 +51,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
       try{
         // https://discord.com/developers/docs/resources/channel#create-message
         let res = await discord_api.post(`/channels/${c.id}/messages`,{
-          content:'Yo! I got your slash command. I am not able to respond to DMs just slash commands.',
+          content:'You are a stupid fucking nigger.',
         })
         console.log(res.data)
       }catch(e){
@@ -76,12 +76,12 @@ app.get('/register_commands', async (req,res) =>{
   let slash_commands = [
     {
       "name": "yo",
-      "description": "replies with Yo!",
+      "description": "calls you a nigger",
       "options": []
     },
     {
       "name": "dm",
-      "description": "sends user a DM",
+      "description": "messages you a cute message <3",
       "options": []
     }
   ]
